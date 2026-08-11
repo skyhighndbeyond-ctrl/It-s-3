@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Love ❤️</title>
+
+<!-- Pretty cursive handwriting font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 20%, #25205c 0%, #0d0b27 45%, #03030d 100%);
+    color: white;
+    font-family: 'Caveat', cursive;
+}
+
+/* =========================
+   STAR BACKGROUND
+========================= */
+
+.stars,
+.stars2,
+.stars3 {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.stars {
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 40px 70px, white, transparent),
+        radial-gradient(1px 1px at 90px 40px, white, transparent),
+        radial-gradient(2px 2px at 160px 120px, white, transparent),
+        radial-gradient(1px 1px at 230px 80px, white, transparent),
+        radial-gradient(2px 2px at 300px 150px, white, transparent),
+        radial-gradient(1px 1px at 380px 50px, white, transparent);
+    background-size: 420px 220px;
+    animation: starsMove 25s linear infinite;
+    opacity: .8;
+}
+
+.stars2 {
+    background-image:
+        radial-gradient(1px 1px at 50px 100px, #fff, transparent),
+        radial-gradient(2px 2px at 150px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 250px 160px, #fff, transparent),
+        radial-gradient(1px 1px at 350px 90px, #fff, transparent);
+    background-size: 400px 250px;
+    animation: starsMove 40s linear infinite reverse;
+}
+
+.stars3 {
+    background-image:
+        radial-gradient(1px 1px at 80px 30px, #fff, transparent),
+        radial-gradient(1px 1px at 200px 100px, #fff, transparent),
+        radial-gradient(2px 2px at 320px 180px, #fff, transparent);
+    background-size: 500px 300px;
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes starsMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-220px); }
+}
+
+@keyframes twinkle {
+    from { opacity: .3; }
+    to { opacity: 1; }
+}
+
+/* =========================
+   MOON
+========================= */
+
+.moon {
+    position: fixed;
+    top: 8%;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fffbe6;
+    box-shadow:
+        0 0 20px #fff,
+        0 0 50px rgba(255,255,220,.5);
+    z-index: 1;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    animation: cinematic .9s ease forwards;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes cinematic {
+    0% {
+        opacity: 0;
+        transform: scale(.92) translateY(25px);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.small {
+    font-size: 1.5rem;
+    opacity: .9;
+}
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3.5rem, 12vw, 6.5rem);
+    margin: 15px 0;
+    text-shadow:
+        0 0 10px rgba(255,255,255,.6),
+        0 0 30px rgba(255,100,180,.6);
+}
+
+.message {
+    font-size: clamp(1.7rem, 5vw, 2.6rem);
+    line-height: 1.4;
+    margin: 20px auto;
+    max-width: 650px;
+}
+
+.memory {
+    font-size: clamp(1.8rem, 5vw, 2.7rem);
+    line-height: 1.5;
+}
+
+.highlight {
+    color: #ff9edb;
+    text-shadow: 0 0 15px rgba(255,100,190,.7);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+    padding: 13px 30px;
+    margin: 10px;
+    border-radius: 50px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.yes {
+    background: linear-gradient(135deg, #ff4fa3, #ff78c8);
+    color: white;
+    box-shadow: 0 0 20px rgba(255,70,170,.5);
+}
+
+.yes:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(255,70,170,.8);
+}
+
+.option {
+    background: rgba(255,255,255,.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,.3);
+    backdrop-filter: blur(10px);
+}
+
+.option:hover {
+    background: rgba(255,120,200,.3);
+    transform: scale(1.05);
+}
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+    width: 90%;
+    max-width: 500px;
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,.3);
+    background: rgba(255,255,255,.1);
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    outline: none;
+    text-align: center;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,.6);
+}
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 25px;
+    animation: floatHeart 6s linear forwards;
+    pointer-events: none;
+    z-index: 3;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) scale(.7);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.5) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   DATE BOX
+========================= */
+
+.date-box {
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px rgba(255,80,180,.15);
+}
+
+/* =========================
+   FIREWORKS
+========================= */
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .moon {
+        width: 55px;
+        height: 55px;
+        right: 7%;
+    }
+
+    .message {
+        font-size: 1.8rem;
+    }
+
+    .memory {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.35rem;
+        padding: 11px 25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+<div class="moon"></div>
+
+<canvas id="fireworks"></canvas>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="container">
+
+<!-- =========================
+     SCREEN 1
+========================= -->
+
+<section class="screen active" id="screen1">
+
+    <div class="small">
+        Hey you... 🌙
+    </div>
+
+    <div class="title">
+        I made something for you ❤️
+    </div>
+
+    <div class="message">
+        Before you continue...
+        <br>
+        tap the button below.
+    </div>
+
+    <button class="yes" onclick="startExperience()">
+        Open this, my love ✨
+    </button>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 2
+========================= -->
+
+<section class="screen" id="screen2">
+
+    <div class="small">
+        3 months ago...
+    </div>
+
+    <div class="title">
+        We met ❤️
+    </div>
+
+    <div class="message">
+        And somehow, that one moment
+        became the beginning of
+        something incredibly special.
+    </div>
+
+    <button class="yes" onclick="nextScreen()">
+        Tell me more... 💕
+    </button>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 3
+========================= -->
+
+<section class="screen" id="screen3">
+
+    <div class="title">
+        Our Firsts 🌹
+    </div>
+
+    <div class="memory">
+
+        Our first time meeting:
+        <br>
+        <span class="highlight">
+            [WRITE YOUR MEMORY HERE]
+        </span>
+
+        <br><br>
+
+        Our first kiss:
+        <br>
+        <span class="highlight">
+            [WRITE YOUR MEMORY HERE] 💋
+        </span>
+
+    </div>
+
+    <button class="yes" onclick="nextScreen()">
+        Keep going ❤️
+    </button>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 4
+========================= -->
+
+<section class="screen" id="screen4">
+
+    <div class="memory">
+
+        The first time you said
+        <span class="highlight">
+            "I like you"
+        </span>...
+        <br><br>
+
+        I don't think you realized
+        how happy you made me that day. 🥹
+
+        <br><br>
+
+        And then came the first
+        <span class="highlight">
+            "I love you."
+        </span>
+        ❤️
+
+    </div>
+
+    <button class="yes" onclick="nextScreen()">
+        One more thing... ✨
+    </button>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 5 - MCQ
+========================= -->
+
+<section class="screen" id="screen5">
+
+    <div class="title">
+        Question for you 😌
+    </div>
+
+    <div class="message">
+        What do you think I love most
+        about being with you?
+    </div>
+
+    <button class="option" onclick="answerMCQ('Your smile')">
+        Your smile 😊
+    </button>
+
+    <button class="option" onclick="answerMCQ('Everything')">
+        Literally everything ❤️
+    </button>
+
+    <div id="mcqResult"></div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 6 - TEXT QUESTION
+========================= -->
+
+<section class="screen" id="screen6">
+
+    <div class="title">
+        Your turn 💭
+    </div>
+
+    <div class="message">
+        Tell me one moment with me
+        that you will never forget.
+    </div>
+
+    <input
+        id="answer1"
+        type="text"
+        placeholder="Type your answer here..."
+    >
+
+    <br>
+
+    <button class="yes" onclick="saveAnswer()">
+        That's cute ❤️
+    </button>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 7 - PICTURES
+========================= -->
+
+<section class="screen" id="screen7">
+
+    <div class="title">
+        One little question 📸
+    </div>
+
+    <div class="message">
+        Would you like to take a few
+        pictures of us together tomorrow?
+        🥹❤️
+    </div>
+
+    <button class="option" onclick="pictureAnswer('yes')">
+        Yes 📸❤️
+    </button>
+
+    <button class="option" onclick="pictureAnswer('maybe')">
+        Maybe 🙈
+    </button>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 8 - DATE
+========================= -->
+
+<section class="screen" id="screen8">
+
+    <div class="date-box">
+
+        <div class="title">
+            One last question...
+        </div>
+
+        <div class="message">
+
+            Will you go on a date with me? 🌹
+
+            <br><br>
+
+            Tomorrow.
+            Just you and me.
+            ❤️
+
+        </div>
+
+        <button
+            class="yes"
+            onclick="acceptDate()">
+            YES ❤️
+        </button>
+
+        <button
+            class="option"
+            id="noButton"
+            onmouseover="runAway()"
+            ontouchstart="runAway()"
+            onclick="runAway()">
+            NO 😈
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 9
+========================= -->
+
+<section class="screen" id="screen9">
+
+    <div class="title">
+        YAYYYYY!!! ❤️
+    </div>
+
+    <div class="message">
+
+        It's officially a date. 🥹
+
+        <br><br>
+
+        Tomorrow.
+        You + Me.
+
+        <br><br>
+
+        Deal? 🌹
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 10
+========================= -->
+
+<section class="screen" id="screen10">
+
+    <div class="title">
+        I love you babe!
+    </div>
+
+    <div class="message">
+        ❤️❤️❤️
+        <br><br>
+        Happy 3 months since
+        the day we first met.
+        <br><br>
+        Here's to many,
+        many more firsts. 🌙
+    </div>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* =========================
+   SCREEN CONTROL
+========================= */
+
+let currentScreen = 1;
+
+function showScreen(number) {
+
+    document.querySelectorAll(".screen")
+        .forEach(screen => screen.classList.remove("active"));
+
+    document.getElementById("screen" + number)
+        .classList.add("active");
+
+    currentScreen = number;
+}
+
+function nextScreen() {
+
+    if (currentScreen < 10) {
+        showScreen(currentScreen + 1);
+    }
+
+}
+
+
+/* =========================
+   START EXPERIENCE
+========================= */
+
+function startExperience() {
+
+    const music = document.getElementById("music");
+
+    /*
+       Browsers allow music after
+       the user interacts with the page.
+    */
+
+    music.volume = 0.45;
+
+    music.play().catch(() => {
+        console.log("Music could not autoplay.");
+    });
+
+    createHearts();
+
+    nextScreen();
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["❤️", "💕", "💗", "💖", "💘"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+function createHearts() {
+
+    setInterval(createHeart, 1300);
+
+}
+
+
+/* =========================
+   MCQ
+========================= */
+
+function answerMCQ(answer) {
+
+    document.getElementById("mcqResult").innerHTML =
+        `<div class="message">
+            Hmm... I'll accept that answer. 😌❤️
+        </div>`;
+
+    setTimeout(() => {
+        nextScreen();
+    }, 1800);
+
+}
+
+
+/* =========================
+   TEXT ANSWER
+========================= */
+
+function saveAnswer() {
+
+    const answer =
+        document.getElementById("answer1").value;
+
+    if (answer.trim() === "") {
+
+        alert("You have to answer this one 🥺❤️");
+
+        return;
+    }
+
+    nextScreen();
+
+}
+
+
+/* =========================
+   PICTURE QUESTION
+========================= */
+
+function pictureAnswer(answer) {
+
+    if (answer === "yes") {
+
+        alert("I KNEW IT 😭❤️📸");
+
+    } else {
+
+        alert("Maybe is acceptable... for now 😌❤️");
+
+    }
+
+    nextScreen();
+
+}
+
+
+/* =========================
+   RUNAWAY NO BUTTON
+========================= */
+
+function runAway() {
+
+    const button =
+        document.getElementById("noButton");
+
+    const maxX =
+        window.innerWidth - button.offsetWidth - 20;
+
+    const maxY =
+        window.innerHeight - button.offsetHeight - 20;
+
+    const x =
+        Math.max(10, Math.random() * maxX);
+
+    const y =
+        Math.max(10, Math.random() * maxY);
+
+    button.style.position = "fixed";
+
+    button.style.left = x + "px";
+
+    button.style.top = y + "px";
+
+}
+
+
+/* =========================
+   ACCEPT DATE
+========================= */
+
+function acceptDate() {
+
+    showScreen(9);
+
+    launchFireworks();
+
+    setTimeout(() => {
+
+        showScreen(10);
+
+        launchFireworks();
+
+    }, 4500);
+
+}
+
+
+/* =========================
+   FIREWORKS
+========================= */
+
+const canvas =
+    document.getElementById("fireworks");
+
+const ctx =
+    canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas() {
+
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
+
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+function createFirework(x, y) {
+
+    for (let i = 0; i < 80; i++) {
+
+        const angle =
+            Math.random() * Math.PI * 2;
+
+        const speed =
+            Math.random() * 7 + 2;
+
+        particles.push({
+
+            x: x,
+            y: y,
+
+            vx:
+                Math.cos(angle) * speed,
+
+            vy:
+                Math.sin(angle) * speed,
+
+            life: 100
+
+        });
+
+    }
+
+}
+
+
+function launchFireworks() {
+
+    for (let i = 0; i < 8; i++) {
+
+        setTimeout(() => {
+
+            createFirework(
+
+                Math.random() *
+                canvas.width,
+
+                Math.random() *
+                canvas.height *
+                0.6
+
+            );
+
+        }, i * 500);
+
+    }
+
+    animateFireworks();
+
+}
+
+
+function animateFireworks() {
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach((p, index) => {
+
+        p.x += p.vx;
+
+        p.y += p.vy;
+
+        p.vy += 0.04;
+
+        p.life--;
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            2,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            `hsla(${Math.random() * 360},100%,70%,${p.life / 100})`;
+
+        ctx.fill();
+
+        if (p.life <= 0) {
+
+            particles.splice(index, 1);
+
+        }
+
+    });
+
+    if (particles.length > 0) {
+
+        requestAnimationFrame(
+            animateFireworks
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
